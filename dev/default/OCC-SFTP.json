@@ -41,6 +41,186 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 1
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "fc00356c-e93a-380b-869a-0142a21c925a",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a83c7504-eee9-3f9d-bd28-d999bbc0cadb",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure", "permission.denied", "not.found" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "4c2096d2-ab6e-3181-95ef-15c8104a2cbf",
+        "name" : "FetchFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "fc00356c-e93a-380b-869a-0142a21c925a",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "cc785f48-f1ae-3d0d-941d-16e54a11531c",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure", "reject" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
+        "name" : "PutSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 6
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "26baba3f-61b2-36a7-9404-d6b38b5dcd89",
+        "name" : "LogAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "76b916c9-e604-33b7-98a1-4961983c67d4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
+        "name" : "PutSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 7
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
+        "name" : "PutSFTP",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a0238533-cc48-3c48-8479-ef6e5fa870f3",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "555ef8fe-ae31-3d2b-a833-19d13a7be386",
+        "name" : "CryptographicHashContent",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 4
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "fc00356c-e93a-380b-869a-0142a21c925a",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "0c5d0681-f9e7-3545-8b11-22125ae956a6",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "555ef8fe-ae31-3d2b-a833-19d13a7be386",
+        "name" : "CryptographicHashContent",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 5
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "555ef8fe-ae31-3d2b-a833-19d13a7be386",
+        "name" : "CryptographicHashContent",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3cc73442-4b45-379d-8752-ced314ac665e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "4c2096d2-ab6e-3181-95ef-15c8104a2cbf",
+        "name" : "FetchFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 3
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -50,7 +230,15 @@
     "externalControllerServiceReferences" : { },
     "flowFileConcurrency" : "UNBOUNDED",
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
-    "funnels" : [ ],
+    "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "fc00356c-e93a-380b-869a-0142a21c925a",
+      "position" : {
+        "x" : -760.0,
+        "y" : 144.0
+      }
+    } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
     "labels" : [ ],
@@ -82,8 +270,8 @@
       "name" : "CryptographicHashContent",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -336.0,
-        "y" : 176.0
+        "x" : -344.0,
+        "y" : 192.0
       },
       "properties" : {
         "hash_algorithm" : "SHA-256",
@@ -115,7 +303,7 @@
       "type" : "org.apache.nifi.processors.standard.CryptographicHashContent",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "success" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -133,15 +321,16 @@
       "name" : "LogAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -824.5,
-        "y" : 454.5
+        "x" : -984.0,
+        "y" : 432.0
       },
       "properties" : {
         "character-set" : "UTF-8",
         "Log FlowFile Properties" : "true",
         "Log Level" : "info",
+        "Attributes to Log" : "filename\npath \nfile.size \ncontent_SHA-256",
         "attributes-to-log-regex" : ".*",
-        "Output Format" : "Line per Attribute",
+        "Output Format" : "Single Line",
         "Log Payload" : "false"
       },
       "propertyDescriptors" : {
@@ -216,7 +405,7 @@
           "sensitive" : false
         }
       },
-      "retriedRelationships" : [ ],
+      "retriedRelationships" : [ "success" ],
       "retryCount" : 10,
       "runDurationMillis" : 25,
       "scheduledState" : "ENABLED",
@@ -244,21 +433,25 @@
       "name" : "PutSFTP",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -328.0,
-        "y" : 400.0
+        "x" : -352.0,
+        "y" : 432.0
       },
       "properties" : {
         "Port" : "22",
-        "Create Directory" : "false",
+        "Create Directory" : "true",
         "Conflict Resolution" : "NONE",
         "Disable Directory Listing" : "false",
         "Connection Timeout" : "30 sec",
         "Dot Rename" : "true",
         "Strict Host Key Checking" : "false",
+        "Password" : "#{sftp.password}",
+        "Hostname" : "#{sftp.server.fqdn}",
         "Reject Zero-Byte Files" : "true",
-        "Use Compression" : "false",
+        "Remote Path" : "#{sftp.remote.root}",
+        "Use Compression" : "true",
         "Send Keep Alive On Timeout" : "true",
         "Data Timeout" : "30 sec",
+        "Username" : "#{sftp.username}",
         "Batch Size" : "500"
       },
       "propertyDescriptors" : {
@@ -792,7 +985,7 @@
       "name" : "ListFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -408.0,
+        "x" : -360.0,
         "y" : -416.0
       },
       "properties" : {
@@ -1076,10 +1269,15 @@
         "value" : "CRITICAL: Replication Failure - ${filename}"
       }, {
         "description" : "",
+        "name" : "sftp.password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
         "name" : "sftp.local.root",
         "provided" : false,
         "sensitive" : false,
-        "value" : "/nfs/"
+        "value" : "/tmp/nfs/"
       }, {
         "description" : "Number of automated attempts before failing.",
         "name" : "sftp.retry.count",
@@ -1092,6 +1290,11 @@
         "provided" : false,
         "sensitive" : false,
         "value" : "/"
+      }, {
+        "description" : "",
+        "name" : "sftp.username",
+        "provided" : false,
+        "sensitive" : false
       } ]
     }
   },

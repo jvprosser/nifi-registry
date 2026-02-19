@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1771538642532,
+    "description" : "dev",
+    "identifier" : "OCC-SFTP",
+    "lastModifiedTimestamp" : 1771538642532,
+    "name" : "OCC-SFTP",
+    "versionCount" : 0
+  },
+  "latest" : false
+}

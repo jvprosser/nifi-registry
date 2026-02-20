@@ -49,6 +49,66 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "68563d28-4ffa-3df1-b29c-147bca8319f2",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "bc7d622b-577b-3eaf-b43c-9810045a5c06",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "66b3787f-0506-3662-80dd-bf1df4501937",
+        "name" : "PutEmail",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 11
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "2b2be35d-5ae1-3fb5-8fc6-eeb563e19ce2",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "12fec819-37b3-3e16-824c-f9a08e9aee4a",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
+        "name" : "PutSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 8
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "fc00356c-e93a-380b-869a-0142a21c925a",
         "name" : "Funnel",
         "type" : "FUNNEL"
@@ -74,6 +134,69 @@
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
+      "bends" : [ {
+        "x" : -648.0,
+        "y" : 664.0
+      } ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
+        "name" : "PutSFTP",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "46ef5c60-01b8-334d-95b9-a200059b3d55",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "2b2be35d-5ae1-3fb5-8fc6-eeb563e19ce2",
+        "name" : "UpdateAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 10
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "66b3787f-0506-3662-80dd-bf1df4501937",
+        "name" : "PutEmail",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "69c2098d-04c8-3c04-848b-c9f1d7d69dd3",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure", "reject" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
+        "name" : "PutSFTP",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 9
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -92,7 +215,7 @@
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure", "reject" ],
+      "selectedRelationships" : [ "reject" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
@@ -238,6 +361,14 @@
         "x" : -760.0,
         "y" : 144.0
       }
+    }, {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "68563d28-4ffa-3df1-b29c-147bca8319f2",
+      "position" : {
+        "x" : 344.0,
+        "y" : 528.0
+      }
     } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
@@ -321,13 +452,13 @@
       "name" : "LogAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -984.0,
-        "y" : 432.0
+        "x" : -1048.0,
+        "y" : 464.0
       },
       "properties" : {
         "character-set" : "UTF-8",
         "Log FlowFile Properties" : "true",
-        "Log Level" : "info",
+        "Log Level" : "warn",
         "Attributes to Log" : "filename\npath \nfile.size \ncontent_SHA-256",
         "attributes-to-log-regex" : ".*",
         "Output Format" : "Single Line",
@@ -433,7 +564,7 @@
       "name" : "PutSFTP",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -352.0,
+        "x" : -328.0,
         "y" : 432.0
       },
       "properties" : {
@@ -667,7 +798,7 @@
           "sensitive" : false
         }
       },
-      "retriedRelationships" : [ ],
+      "retriedRelationships" : [ "failure", "reject" ],
       "retryCount" : 10,
       "runDurationMillis" : 0,
       "scheduledState" : "ENABLED",
@@ -759,7 +890,7 @@
       "type" : "org.apache.nifi.processors.standard.FetchFile",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "success" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -777,19 +908,24 @@
       "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 245.5,
-        "y" : 791.5
+        "x" : 56.0,
+        "y" : 760.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
+        "Message" : "#{alert.email.body}",
         "Attach File" : "false",
+        "attribute-name-regex" : ".*",
         "input-character-set" : "UTF-8",
         "SMTP Port" : "25",
         "SMTP Auth" : "true",
+        "From" : "nifi@cloudera.com",
         "Include All Attributes In Message" : "false",
-        "Subject" : "Message from NiFi",
+        "SMTP Hostname" : "smtp.cloudera.com",
+        "Subject" : "#{alert.email.subject}",
         "SMTP X-Mailer Header" : "NiFi",
         "Content Type" : "text/plain",
+        "To" : "jprosser@cloudera.com",
         "email-ff-content-as-message" : "false",
         "authorization-mode" : "password-based-authorization-mode",
         "SMTP TLS" : "false"
@@ -985,8 +1121,8 @@
       "name" : "ListFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -360.0,
-        "y" : -416.0
+        "x" : -352.0,
+        "y" : -328.0
       },
       "properties" : {
         "Minimum File Age" : "0 sec",
@@ -996,6 +1132,7 @@
         "et-node-identifier" : "${hostname()}",
         "Recurse Subdirectories" : "true",
         "File Filter" : "[^\\.].*",
+        "Path Filter" : "[^\\.].*",
         "Include File Attributes" : "true",
         "Input Directory Location" : "Local",
         "listing-strategy" : "timestamps",
@@ -1191,8 +1328,8 @@
       "name" : "UpdateAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -304.0,
-        "y" : 664.0
+        "x" : -440.0,
+        "y" : 768.0
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -1260,7 +1397,7 @@
         "name" : "sftp.server.fqdn",
         "provided" : false,
         "sensitive" : false,
-        "value" : "chi.theocc-int.com"
+        "value" : "go01-aws-nifi2-nifi1.go01-dem.ylcu-atmi.cloudera.site"
       }, {
         "description" : "Subject line for failure notifications.",
         "name" : "alert.email.subject",
@@ -1289,12 +1426,13 @@
         "name" : "sftp.remote.root",
         "provided" : false,
         "sensitive" : false,
-        "value" : "/"
+        "value" : "/tmp/dest/nfs"
       }, {
         "description" : "",
         "name" : "sftp.username",
         "provided" : false,
-        "sensitive" : false
+        "sensitive" : false,
+        "value" : "jprosser"
       } ]
     }
   },

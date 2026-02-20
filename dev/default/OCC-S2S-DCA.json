@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1771552715293,
+    "description" : "copy files with S2S",
+    "identifier" : "OCC-S2S-DCA",
+    "lastModifiedTimestamp" : 1771552715293,
+    "name" : "OCC-S2S-DCA",
+    "versionCount" : 0
+  },
+  "latest" : false
+}

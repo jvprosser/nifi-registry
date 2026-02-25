@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1772031089254,
     "description" : "S2S replication monitoring",
@@ -7,5 +8,489 @@
     "name" : "Monitoring",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "727c671b-8971-3f7c-ffff-ffffef9dd563",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "66a32df2-b3b2-31da-ffff-ffffef9dd563",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "unmatched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ea80d9c2-6a01-3d3c-ffff-ffffef9dd563",
+        "name" : "RouteOnContent",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 10
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ea80d9c2-6a01-3d3c-ffff-ffffef9dd563",
+        "name" : "RouteOnContent",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "c8a4485d-0776-30bc-b550-80336b4b812b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "flow-contents-group",
+        "id" : "a01eeaa0-8450-3e5d-9f87-33fa6f64eb97",
+        "name" : "Monitor-l",
+        "type" : "INPUT_PORT"
+      },
+      "zIndex" : 12
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "52c2c5fd-dd82-3662-ffff-ffffef9dd563",
+        "name" : "PutEmail",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "4d689e1f-d412-376c-ffff-ffffef9dd563",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "ERROR" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ea80d9c2-6a01-3d3c-ffff-ffffef9dd563",
+        "name" : "RouteOnContent",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 9
+    } ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ {
+      "componentType" : "FUNNEL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "727c671b-8971-3f7c-ffff-ffffef9dd563",
+      "position" : {
+        "x" : 211.75,
+        "y" : -28.0
+      }
+    } ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "INPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a01eeaa0-8450-3e5d-9f87-33fa6f64eb97",
+      "name" : "Monitor-l",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -768.0,
+        "y" : -224.0
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "INPUT_PORT"
+    } ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "Montoring",
+    "outputPorts" : [ ],
+    "parameterContextName" : "OCC-SFTP-PC",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "success", "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.4.0.4.2.1.700-93"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "52c2c5fd-dd82-3662-ffff-ffffef9dd563",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutEmail",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -272.0,
+        "y" : 128.0
+      },
+      "properties" : {
+        "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
+        "Message" : "#{alert.email.body}",
+        "Attach File" : "false",
+        "attribute-name-regex" : ".*",
+        "input-character-set" : "UTF-8",
+        "SMTP Port" : "587",
+        "SMTP Auth" : "false",
+        "From" : "nifi@cloudera.com",
+        "Include All Attributes In Message" : "false",
+        "SMTP Hostname" : "noreply-smtp.infra.cloudera.com",
+        "Subject" : "#{alert.email.subject}",
+        "SMTP X-Mailer Header" : "NiFi",
+        "Content Type" : "text/plain",
+        "SMTP Username" : "jprosser",
+        "To" : "jprosser@cloudera.com",
+        "email-ff-content-as-message" : "false",
+        "authorization-mode" : "password-based-authorization-mode",
+        "SMTP TLS" : "false"
+      },
+      "propertyDescriptors" : {
+        "CC" : {
+          "displayName" : "CC",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "CC",
+          "sensitive" : false
+        },
+        "Reply-To" : {
+          "displayName" : "Reply-To",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Reply-To",
+          "sensitive" : false
+        },
+        "SMTP Socket Factory" : {
+          "displayName" : "SMTP Socket Factory",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Socket Factory",
+          "sensitive" : false
+        },
+        "BCC" : {
+          "displayName" : "BCC",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "BCC",
+          "sensitive" : false
+        },
+        "Message" : {
+          "displayName" : "Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Message",
+          "sensitive" : false
+        },
+        "Attach File" : {
+          "displayName" : "Attach File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Attach File",
+          "sensitive" : false
+        },
+        "attribute-name-regex" : {
+          "displayName" : "Attributes to Send as Headers (Regex)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "attribute-name-regex",
+          "sensitive" : false
+        },
+        "input-character-set" : {
+          "displayName" : "Input Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "input-character-set",
+          "sensitive" : false
+        },
+        "SMTP Port" : {
+          "displayName" : "SMTP Port",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Port",
+          "sensitive" : false
+        },
+        "SMTP Auth" : {
+          "displayName" : "SMTP Auth",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Auth",
+          "sensitive" : false
+        },
+        "From" : {
+          "displayName" : "From",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "From",
+          "sensitive" : false
+        },
+        "Include All Attributes In Message" : {
+          "displayName" : "Include All Attributes In Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Include All Attributes In Message",
+          "sensitive" : false
+        },
+        "SMTP Hostname" : {
+          "displayName" : "SMTP Hostname",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Hostname",
+          "sensitive" : false
+        },
+        "Subject" : {
+          "displayName" : "Subject",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Subject",
+          "sensitive" : false
+        },
+        "SMTP X-Mailer Header" : {
+          "displayName" : "SMTP X-Mailer Header",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP X-Mailer Header",
+          "sensitive" : false
+        },
+        "oauth2-access-token-provider" : {
+          "displayName" : "OAuth2 Access Token Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "oauth2-access-token-provider",
+          "sensitive" : false
+        },
+        "Content Type" : {
+          "displayName" : "Content Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Content Type",
+          "sensitive" : false
+        },
+        "SMTP Username" : {
+          "displayName" : "SMTP Username",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Username",
+          "sensitive" : false
+        },
+        "To" : {
+          "displayName" : "To",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "To",
+          "sensitive" : false
+        },
+        "SMTP Password" : {
+          "displayName" : "SMTP Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP Password",
+          "sensitive" : true
+        },
+        "email-ff-content-as-message" : {
+          "displayName" : "Flow file content as message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "email-ff-content-as-message",
+          "sensitive" : false
+        },
+        "authorization-mode" : {
+          "displayName" : "Authorization Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "authorization-mode",
+          "sensitive" : false
+        },
+        "SMTP TLS" : {
+          "displayName" : "SMTP STARTTLS",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "SMTP TLS",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.PutEmail",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.4.0.4.2.1.700-93"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "ea80d9c2-6a01-3d3c-ffff-ffffef9dd563",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "RouteOnContent",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -259.75,
+        "y" : -256.0
+      },
+      "properties" : {
+        "Content Buffer Size" : "1 MB",
+        "Match Requirement" : "content must contain match",
+        "ERROR" : "ERROR",
+        "Character Set" : "UTF-8"
+      },
+      "propertyDescriptors" : {
+        "Content Buffer Size" : {
+          "displayName" : "Content Buffer Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Content Buffer Size",
+          "sensitive" : false
+        },
+        "Match Requirement" : {
+          "displayName" : "Match Requirement",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Match Requirement",
+          "sensitive" : false
+        },
+        "ERROR" : {
+          "displayName" : "ERROR",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "ERROR",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnContent",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "OCC-SFTP-PC" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "OCC-SFTP-PC",
+      "parameters" : [ {
+        "description" : "Detailed error message for the operations team.",
+        "name" : "alert.email.body",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "ALERT: File replication failed... (see details below)"
+      }, {
+        "description" : "destination sftp host info",
+        "name" : "sftp.server.fqdn",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "go01-aws-nifi-nifi0.go01-dem.ylcu-atmi.cloudera.site"
+      }, {
+        "description" : "",
+        "name" : "sftp.password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "Subject line for failure notifications.",
+        "name" : "alert.email.subject",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "CRITICAL: Replication Failure - ${filename}"
+      }, {
+        "description" : "",
+        "name" : "sftp.local.root",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "/tmp/nfs/"
+      }, {
+        "description" : "Number of automated attempts before failing.",
+        "name" : "sftp.retry.count",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "3"
+      }, {
+        "description" : "Base directory on the destination SFTP server.",
+        "name" : "sftp.remote.root",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "/tmp/dest/nfs"
+      }, {
+        "description" : "",
+        "name" : "sftp.username",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "jprosser"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "jprosser",
+    "flowIdentifier" : "Monitoring",
+    "timestamp" : 0
+  }
 }

@@ -193,7 +193,7 @@
       "zIndex" : 5
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
+      "backPressureObjectThreshold" : 100,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {

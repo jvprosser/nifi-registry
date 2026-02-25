@@ -364,14 +364,6 @@
     }, {
       "componentType" : "FUNNEL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e15f33ce-df5e-3fbe-8288-981803cdcb71",
-      "position" : {
-        "x" : -701.5,
-        "y" : -168.5
-      }
-    }, {
-      "componentType" : "FUNNEL",
-      "groupIdentifier" : "flow-contents-group",
       "identifier" : "68563d28-4ffa-3df1-b29c-147bca8319f2",
       "position" : {
         "x" : 344.0,

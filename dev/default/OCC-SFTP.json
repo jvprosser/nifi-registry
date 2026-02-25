@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1772029887686,
+    "description" : "Move files with SFTP",
+    "identifier" : "OCC-SFTP",
+    "lastModifiedTimestamp" : 1772029887686,
+    "name" : "OCC-SFTP",
+    "versionCount" : 0
+  },
+  "latest" : false
+}

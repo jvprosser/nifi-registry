@@ -409,7 +409,7 @@
       "name" : "CryptographicHashContent",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -344.0,
+        "x" : -328.0,
         "y" : 192.0
       },
       "properties" : {
@@ -460,8 +460,8 @@
       "name" : "LogAttribute",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -1048.0,
-        "y" : 464.0
+        "x" : -1136.0,
+        "y" : 432.0
       },
       "properties" : {
         "character-set" : "UTF-8",
@@ -572,7 +572,7 @@
       "name" : "PutSFTP",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -328.0,
+        "x" : -320.0,
         "y" : 432.0
       },
       "properties" : {
@@ -834,8 +834,8 @@
       "name" : "FetchFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -360.0,
-        "y" : -40.0
+        "x" : -336.0,
+        "y" : -32.0
       },
       "properties" : {
         "Move Conflict Strategy" : "Rename",
@@ -1129,8 +1129,8 @@
       "name" : "ListFile",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -352.0,
-        "y" : -328.0
+        "x" : -344.0,
+        "y" : -296.0
       },
       "properties" : {
         "Minimum File Age" : "0 sec",

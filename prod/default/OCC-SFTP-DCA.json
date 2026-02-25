@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1772030974005,
+    "description" : "Replicate files via SFTP",
+    "identifier" : "OCC-SFTP-DCA",
+    "lastModifiedTimestamp" : 1772030974005,
+    "name" : "OCC-SFTP-DCA",
+    "versionCount" : 0
+  },
+  "latest" : false
+}

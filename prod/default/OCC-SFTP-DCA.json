@@ -372,7 +372,22 @@
     } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
-    "labels" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 384.0,
+      "identifier" : "05c92b3a-907a-3443-0000-000077716d16",
+      "label" : "Goes Managed demos nifi 2",
+      "position" : {
+        "x" : -1823.0,
+        "y" : -631.0
+      },
+      "style" : {
+        "font-size" : "12px"
+      },
+      "width" : 504.0,
+      "zIndex" : 1
+    } ],
     "maxConcurrentTasks" : 1,
     "name" : "OCC-SFTP-DCA",
     "outputPorts" : [ ],

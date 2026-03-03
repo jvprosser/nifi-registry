@@ -25,6 +25,66 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3ff847dc-6d34-3729-ae2b-9334138bca7a",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Other_Tasks" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "097868fb-1981-3b81-aa56-84aa488a0983",
+        "name" : "RouteOnAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 15
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ea80d9c2-6a01-3d3c-ffff-ffffef9dd563",
+        "name" : "RouteOnContent",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "3d8c4470-4db0-3474-94b8-5f23e5b6a6c6",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "unmatched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "097868fb-1981-3b81-aa56-84aa488a0983",
+        "name" : "RouteOnAttribute",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 13
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "727c671b-8971-3f7c-ffff-ffffef9dd563",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
       "identifier" : "66a32df2-b3b2-31da-ffff-ffffef9dd563",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
@@ -49,8 +109,8 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "ea80d9c2-6a01-3d3c-ffff-ffffef9dd563",
-        "name" : "RouteOnContent",
+        "id" : "097868fb-1981-3b81-aa56-84aa488a0983",
+        "name" : "RouteOnAttribute",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -114,8 +174,8 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "727c671b-8971-3f7c-ffff-ffffef9dd563",
       "position" : {
-        "x" : 211.75,
-        "y" : -28.0
+        "x" : 320.0,
+        "y" : -360.0
       }
     } ],
     "identifier" : "flow-contents-group",
@@ -128,8 +188,8 @@
       "name" : "Monitor-l",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : -768.0,
-        "y" : -224.0
+        "x" : -808.0,
+        "y" : -488.0
       },
       "scheduledState" : "ENABLED",
       "type" : "INPUT_PORT"
@@ -145,6 +205,57 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
+      "autoTerminatedRelationships" : [ "${reporting.task.type}" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.4.0.4.2.1.700-93"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "097868fb-1981-3b81-aa56-84aa488a0983",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "RouteOnAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -416.0,
+        "y" : -512.0
+      },
+      "properties" : {
+        "Other_Tasks" : "${reporting.task.type:equals('SiteToSiteProvenanceReportingTask'):not()}",
+        "Routing Strategy" : "Route to Property name"
+      },
+      "propertyDescriptors" : {
+        "Other_Tasks" : {
+          "displayName" : "Other_Tasks",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "Other_Tasks",
+          "sensitive" : false
+        },
+        "Routing Strategy" : {
+          "displayName" : "Routing Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Routing Strategy",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ "success", "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -163,8 +274,8 @@
       "name" : "PutEmail",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 88.0,
-        "y" : 128.0
+        "x" : 296.0,
+        "y" : 440.0
       },
       "properties" : {
         "SMTP Socket Factory" : "javax.net.ssl.SSLSocketFactory",
@@ -489,8 +600,8 @@
       "name" : "RouteOnContent",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -259.75,
-        "y" : -256.0
+        "x" : -464.0,
+        "y" : -184.0
       },
       "properties" : {
         "Content Buffer Size" : "1 MB",

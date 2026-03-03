@@ -13,7 +13,7 @@
     "componentType" : "PROCESS_GROUP",
     "connections" : [ {
       "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
+      "backPressureObjectThreshold" : 10,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -43,7 +43,7 @@
       "zIndex" : 3
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
+      "backPressureObjectThreshold" : 1000,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -133,7 +133,7 @@
       "zIndex" : 9
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 100,
+      "backPressureObjectThreshold" : 10,
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
@@ -148,7 +148,7 @@
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
+      "name" : "To_DC_B",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
       "selectedRelationships" : [ "success" ],

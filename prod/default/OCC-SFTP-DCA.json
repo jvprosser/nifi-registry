@@ -232,13 +232,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "26baba3f-61b2-36a7-9404-d6b38b5dcd89",
-        "name" : "LogAttribute",
-        "type" : "PROCESSOR"
+        "id" : "fc00356c-e93a-380b-869a-0142a21c925a",
+        "name" : "Funnel",
+        "type" : "FUNNEL"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "76b916c9-e604-33b7-98a1-4961983c67d4",
+      "identifier" : "cbe80b27-5007-3d13-af42-9926112a155d",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -249,11 +249,11 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
-        "name" : "PutSFTP",
+        "id" : "26baba3f-61b2-36a7-9404-d6b38b5dcd89",
+        "name" : "LogAttribute",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 7
+      "zIndex" : 12
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -449,7 +449,7 @@
       "type" : "org.apache.nifi.processors.standard.CryptographicHashContent",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "success" ],
+      "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -561,7 +561,7 @@
       "type" : "org.apache.nifi.processors.standard.LogAttribute",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "success" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -577,7 +577,7 @@
       "identifier" : "aff8866c-604d-3603-a9c4-8dcfbb2a4e64",
       "maxBackoffPeriod" : "10 mins",
       "name" : "PutSFTP",
-      "penaltyDuration" : "30 sec",
+      "penaltyDuration" : "1 sec",
       "position" : {
         "x" : -320.0,
         "y" : 432.0
@@ -588,7 +588,7 @@
         "Conflict Resolution" : "NONE",
         "Disable Directory Listing" : "false",
         "Connection Timeout" : "30 sec",
-        "Dot Rename" : "true",
+        "Dot Rename" : "false",
         "Strict Host Key Checking" : "false",
         "Password" : "#{sftp.password}",
         "Hostname" : "#{sftp.server.fqdn}",
@@ -1348,7 +1348,8 @@
       },
       "properties" : {
         "Store State" : "Do not store state",
-        "canonical-value-lookup-cache-size" : "100"
+        "canonical-value-lookup-cache-size" : "100",
+        "redo" : "true"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -1370,6 +1371,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "canonical-value-lookup-cache-size",
+          "sensitive" : false
+        },
+        "redo" : {
+          "displayName" : "redo",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "redo",
           "sensitive" : false
         },
         "Stateful Variables Initial Value" : {

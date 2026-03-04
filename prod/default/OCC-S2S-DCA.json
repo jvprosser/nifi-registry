@@ -180,7 +180,22 @@
     } ],
     "identifier" : "flow-contents-group",
     "inputPorts" : [ ],
-    "labels" : [ ],
+    "labels" : [ {
+      "componentType" : "LABEL",
+      "groupIdentifier" : "flow-contents-group",
+      "height" : 384.0,
+      "identifier" : "18fe4bf4-bbdd-3bf0-0000-000076052c71",
+      "label" : "#!/bin/bash\n# Run this on the source nodes \n# Ensure the base directory exists\nmkdir -p /tmp/nfs/\n\nwhile true; do\n    # 1. Generate a random 2-character folder name (a-j)\n    dir=$(tr -dc 'a-j' < /dev/urandom | head -c 2)\n    target_dir=\"/tmp/nfs/$dir\"\n\n    # 2. Create the directory\n    mkdir -p \"$target_dir\"\n\n    # 3. Calculate random size between 100KB and 3GB (in Kilobytes)\n    # 100KB = 100\n    # 3GB = 3,145,728 KB\n    min_size=100\n    max_size=3145728\n    random_kb=$(( RANDOM % (max_size - min_size + 1) + min_size ))\n\n    # 4. Generate the file\n    # We use dd for better performance with large files\n    file_name=\"$(date +\"%Y-%m-%d_%H%M%S\").txt\"\n    dd if=/dev/urandom of=\"$target_dir/$file_name\" bs=1K count=\"$random_kb\" status=none\n\n    # 5. Set permissions and display results\n    chmod -R 777 \"$target_dir\"\n    echo \"Created: $target_dir/$file_name ($random_kb KB)\"\n    ls -lh \"$target_dir/$file_name\"\n\n    sleep 10\ndone",
+      "position" : {
+        "x" : -688.0,
+        "y" : -256.0
+      },
+      "style" : {
+        "font-size" : "12px"
+      },
+      "width" : 512.0,
+      "zIndex" : 1
+    } ],
     "maxConcurrentTasks" : 1,
     "name" : "OCC-S2S-DCA",
     "outputPorts" : [ ],
